@@ -1,15 +1,17 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import portfolioSala from "@/assets/portfolio-sala.jpeg";
+import portfolioDormitorio from "@/assets/portfolio-dormitorio.jpeg";
+import portfolioCozinha1 from "@/assets/portfolio-cozinha1.jpeg";
+import portfolioCozinha2 from "@/assets/portfolio-cozinha2.jpeg";
 
 const categories = ["Todos", "Cozinhas", "Dormitórios", "Salas", "Banheiros", "Escritórios"];
 
 const projects = [
-  { id: 1, title: "Cozinha Moderna Integrada", category: "Cozinhas", color: "from-primary/40 to-accent/30" },
-  { id: 2, title: "Suíte Master Contemporânea", category: "Dormitórios", color: "from-accent/40 to-primary/20" },
-  { id: 3, title: "Sala de Estar Minimalista", category: "Salas", color: "from-primary/30 to-accent/40" },
-  { id: 4, title: "Banheiro Spa Luxuoso", category: "Banheiros", color: "from-accent/30 to-primary/30" },
-  { id: 5, title: "Home Office Funcional", category: "Escritórios", color: "from-primary/40 to-accent/20" },
-  { id: 6, title: "Cozinha Gourmet Premium", category: "Cozinhas", color: "from-accent/40 to-primary/40" },
+  { id: 1, title: "Cozinha Moderna Integrada", category: "Cozinhas", image: portfolioCozinha1 },
+  { id: 2, title: "Suíte Master Contemporânea", category: "Dormitórios", image: portfolioDormitorio },
+  { id: 3, title: "Painel de TV com LED", category: "Salas", image: portfolioSala },
+  { id: 4, title: "Cozinha Gourmet Premium", category: "Cozinhas", image: portfolioCozinha2 },
 ];
 
 const PortfolioSection = () => {
@@ -54,7 +56,11 @@ const PortfolioSection = () => {
               key={project.id}
               className="group relative aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer"
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${project.color}`} />
+              <img
+                src={project.image}
+                alt={project.title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
               <div className="absolute inset-0 bg-foreground/20 group-hover:bg-foreground/40 transition-colors" />
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <span className="text-xs text-accent font-medium tracking-wider uppercase">{project.category}</span>
