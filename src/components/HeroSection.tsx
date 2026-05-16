@@ -36,7 +36,7 @@ const HeroSection = () => {
               Solicitar Orçamento
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-base px-8 py-6 rounded-full">
+            <Button size="lg" className="bg-foreground/90 text-primary-foreground hover:bg-foreground/80 border border-primary-foreground/20 text-base px-8 py-6 rounded-full backdrop-blur-sm">
               Ver Portfólio
             </Button>
           </div>
