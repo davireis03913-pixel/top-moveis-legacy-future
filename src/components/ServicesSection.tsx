@@ -13,16 +13,19 @@ const services: Service[] = [
     icon: Home,
     title: "Salas de Estar",
     description: "Painéis de TV, estantes, racks e móveis sob medida que transformam sua sala em um ambiente acolhedor e funcional.",
+    backgroundImage: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?fm=jpg&q=80&w=2000&auto=format&fit=crop",
   },
   {
     icon: UtensilsCrossed,
     title: "Cozinhas Planejadas",
     description: "Cozinhas completas com design inteligente, aproveitamento máximo de espaço e acabamentos premium.",
+    backgroundImage: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?fm=jpg&q=80&w=2000&auto=format&fit=crop",
   },
   {
     icon: Armchair,
     title: "Dormitórios",
     description: "Guarda-roupas, cabeceiras, cômodas e closets personalizados para o quarto dos seus sonhos.",
+    backgroundImage: "https://images.unsplash.com/photo-1616627547584-bf28cee262db?fm=jpg&q=80&w=2000&auto=format&fit=crop",
   },
   {
     icon: Bath,
@@ -34,11 +37,13 @@ const services: Service[] = [
     icon: Building2,
     title: "Escritórios",
     description: "Home offices e escritórios corporativos com móveis que aliam produtividade e sofisticação.",
+    backgroundImage: "https://images.unsplash.com/photo-1593476550610-87baa860004a?fm=jpg&q=80&w=2000&auto=format&fit=crop",
   },
   {
     icon: Paintbrush,
     title: "Projetos Especiais",
     description: "Peças exclusivas e projetos diferenciados. Se você imaginou, nós transformamos em realidade.",
+    backgroundImage: "https://images.unsplash.com/photo-1615529182904-14819c35db37?fm=jpg&q=80&w=2000&auto=format&fit=crop",
   },
 ];
 
@@ -58,22 +63,27 @@ const ServicesSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service) => (
-            <Card
+            <a
               key={service.title}
-              className={`group border-border/50 hover:border-accent/30 hover:shadow-lg transition-all duration-300 overflow-hidden relative ${service.backgroundImage ? "" : "bg-card"}`}
-              style={service.backgroundImage ? { backgroundImage: `url(${service.backgroundImage})`, backgroundSize: "cover", backgroundPosition: "center" } : undefined}
+              href="#contato"
+              className="block focus:outline-none focus:ring-2 focus:ring-accent rounded-xl"
             >
+              <Card
+                className={`group cursor-pointer border-border/50 hover:border-accent/40 hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.02] transition-all duration-500 overflow-hidden relative min-h-[280px] ${service.backgroundImage ? "" : "bg-card"}`}
+                style={service.backgroundImage ? { backgroundImage: `url(${service.backgroundImage})`, backgroundSize: "cover", backgroundPosition: "center" } : undefined}
+              >
               {service.backgroundImage && (
-                <div className="absolute inset-0 bg-foreground/70 group-hover:bg-foreground/60 transition-colors" />
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/60 to-foreground/30 group-hover:from-foreground/80 group-hover:via-foreground/40 transition-all duration-500" />
               )}
               <CardContent className="p-8 relative z-10">
-                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-colors ${service.backgroundImage ? "bg-white/15 group-hover:bg-white/25" : "bg-accent/10 group-hover:bg-accent/20"}`}>
+                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 ${service.backgroundImage ? "bg-white/15 group-hover:bg-accent/80 backdrop-blur-sm" : "bg-accent/10 group-hover:bg-accent/20"}`}>
                   <service.icon className={`h-7 w-7 ${service.backgroundImage ? "text-white" : "text-accent"}`} />
                 </div>
                 <h3 className={`font-display text-xl font-semibold mb-3 ${service.backgroundImage ? "text-white" : "text-foreground"}`}>{service.title}</h3>
                 <p className={`leading-relaxed ${service.backgroundImage ? "text-white/80" : "text-muted-foreground"}`}>{service.description}</p>
               </CardContent>
-            </Card>
+              </Card>
+            </a>
           ))}
         </div>
       </div>
