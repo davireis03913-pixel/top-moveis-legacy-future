@@ -35,12 +35,14 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-16">
-            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-base px-8 py-6 rounded-full">
-              Solicitar Orçamento
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button asChild size="lg" className="group bg-accent text-accent-foreground hover:bg-accent text-base px-8 py-6 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_hsl(var(--accent)/0.6)]">
+              <a href="#contato">
+                Solicitar Orçamento
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+              </a>
             </Button>
-            <Button size="lg" className="bg-foreground/90 text-primary-foreground hover:bg-foreground/80 border border-primary-foreground/20 text-base px-8 py-6 rounded-full backdrop-blur-sm">
-              Ver Portfólio
+            <Button asChild size="lg" className="group bg-foreground/90 text-primary-foreground hover:bg-foreground/80 hover:border-accent/60 border border-primary-foreground/20 text-base px-8 py-6 rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_hsl(var(--primary-foreground)/0.25)]">
+              <a href="#portfolio">Ver Portfólio</a>
             </Button>
           </div>
 

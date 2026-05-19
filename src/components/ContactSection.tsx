@@ -44,10 +44,13 @@ const ContactSection = () => {
 
                 <Button
                   size="lg"
-                  className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-7 h-12 font-light tracking-wide group"
+                  asChild
+                  className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-7 h-12 font-light tracking-wide group transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_hsl(var(--accent)/0.4)]"
                 >
-                  Iniciar Consultoria Digital
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <a href="#contato">
+                    Iniciar Consultoria Digital
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </a>
                 </Button>
               </div>
             </div>
